@@ -28,7 +28,7 @@ def recommend_movie_matrix(tmdbId):
     corr_coffey_hands = corr[coffey_hands]
     recommended_movies = list(movie_title[(corr_coffey_hands >= 0.9)])[:50]
 
-    recommended_movies_data = movie_data[movie_data['tmdbId'].isin(recommended_movies)][['content_id', 'tmdbId', 'title']]
+    recommended_movies_data = movie_data[movie_data['tmdbId'].isin(recommended_movies)][['tmdbId', 'title']]
     recommended_movies_json = recommended_movies_data.to_json(orient='records')
     return recommended_movies_json
         

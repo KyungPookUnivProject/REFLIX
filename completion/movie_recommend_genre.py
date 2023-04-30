@@ -36,7 +36,7 @@ def random_genres_items_tv(genre):
     genre_df = genre_df.sort_values(by='score', ascending=False).head(10)
     genre_df = genre_df.fillna('')
     
-    result_items = genre_df[['tmdbId']].to_dict("records")
+    result_items = genre_df[['tmdbId', 'title']].to_dict("records")
         
     return result_items
     # genre_df = genre_df.fillna('')
