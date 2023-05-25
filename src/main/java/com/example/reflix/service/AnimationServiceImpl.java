@@ -81,48 +81,13 @@ public class AnimationServiceImpl implements contentsService{
             for(int i=0;i<contentsList.size();i++){
                 contentsList.get(i).setSimir(90);
             }
-//            contentsService.recomendContentsSave(contentsList,userPrincipal.getId());
             return contentsList;
         }
         else{
             return contentsList;
         }
     }
-//
-//    @Transactional
-//    @Override
-//    public List<ContentsRecommendResponseDto> submit(ContentsFavoriteRequestDto contentFavoriteDto, userAdapter userPrincipal) throws IOException {
-//        String command = "python3";
-//        String arg1 = "/Users/gimjingwon/PycharmProjects/pythonProject1/Json_sample.py";
-//        List<ContentsRecommendResponseDto> contentsList= new ArrayList<>();
-//        List<String> pyrequestList = new ArrayList<>();
-//        pyrequestList.add(command);
-//        pyrequestList.add(arg1);
-////        pyrequestList.add(contentFavoriteDto.getContentVariation());
-//        pyrequestList.add(contentFavoriteDto.getJangre());
-////        pyrequestList.add(contentFavoriteDto.getKeword());
-////        pyrequestList.add(contentFavoriteDto.getYear());
-//        String contentString = contentsService.pythonEexc(pyrequestList);
-//        if(contentString!=null){
-//            ObjectMapper mapper = new ObjectMapper();
-//            List<Long> idlist = new ArrayList<>();
-//            List<SimilarContentsDto> list = Arrays.asList(mapper.readValue(contentString, SimilarContentsDto[].class));
-//            for(SimilarContentsDto dto : list){
-//                idlist.add(dto.getTmdbId());
-//            }
-//            contentsList = aniRepository.findAllByAniId(idlist);
-//            for(int i=0;i<contentsList.size();i++){
-//                contentsList.get(i).setSimir(90);
-////                contentsList.get(i).setSimir(list.get(i).getSimilarity());
-//            }
-//            contentsService.recomendContentsSave(contentsList,userPrincipal.getId());
-//            return contentsList;
-//        }
-//        else{
-//            return contentsList;
-//        }
-//    }
-//
+
     @Override
     @Transactional
     public List<ContentsDetailDto> search(String q){
